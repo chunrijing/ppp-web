@@ -1,0 +1,121 @@
+<header ng-include="'template/core/header.html'"></header>
+<div class="main-container">
+	<div class="sidebar">
+		<h3>项目列表</h3>
+		<form role="form">
+			<input type="text" placeholder="请输入项目名称" class="form-control col-xs-3 searchtext" ng-keydown="search($event,searchText)" ng-model="searchText">
+			<div class="absol search-btn"><img src="imgs/icon/icon-search.png" alt="" class="icon-search"></div>
+		</form>
+		<ul class="proUl">
+			<li>土建项目部1（30）</li>
+			<li> 土建项目部1（30）</li>
+			<li>土建项目部1（30）</li>
+			<li>土建项目部1（30）</li>
+			<li>土建项目部1（30）</li>
+			<li>土建项目部1（30）</li>
+		</ul>
+	</div>
+
+	<div class="right-content">
+		<div class="proInfo">
+			<div class="title">
+				<!--<span class="left"></span>-->
+				<h3>项目信息</h3>
+				<div class="btns">
+					<button type="button" ng-click="addPro()">添加项目</button>
+					<button type="button">编辑</button>
+					<button type="button">删除</button>
+				</div>
+			</div>
+			<div class="content">
+				<img src="imgs/logo.png">
+				<ul class="ulLeft" style="flex-grow: 1">
+					<li>项目名称:</li>
+					<li>项目地址:</li>
+					<li>实施机构:</li>
+					<li>社会资本方:</li>
+				</ul>
+				<ul class="ulRigh" style="flex-grow: 2">
+					<li>建设起始时间:</li>
+					<li>建设内容及规模:</li>
+					<li>建设投资:</li>
+					<li>项目行业分布:{{city}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="plan">
+			<div class="title">
+				<!--<span class="left"></span>-->
+				<h3>方案列表</h3>
+			</div>
+			<div class="planSearch">
+				<form role="form" style="width: 268px">
+					<input type="text" placeholder="请输入方案名称" class="form-control col-xs-3 searchtext" ng-keydown="search($event,searchText)" ng-model="searchText">
+					<div class="absol search-btn"><img src="imgs/icon/icon-search.png" alt="" class="icon-search"></div>
+				</form>
+				<div class="btns">
+					<button ng-click="addPlan()">新建</button>
+					<button>对比</button>
+					<button>删除</button>
+				</div>
+			</div>
+			<table border="1" cellspacing="0" cellpadding="0">
+				<thead>
+				<tr>
+					<th width="5%"><span class="thInput" ng-click="check($event)"></span></th>
+					<th width="25%">方案名称</th>
+					<th width="10%">创建时间</th>
+					<th width="10%">创建人</th>
+					<th width="10%">方案属性</th>
+					<th width="10%">备注</th>
+					<th width="20%">方案完成度</th>
+					<th width="10%">操作</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span ng-click="check($event)"></span></td>
+						<td>方案名称</td>
+						<td>创建时间</td>
+						<td>创建人</td>
+						<td>方案属性</td>
+						<td>备注</td>
+						<td>方案完成度</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td><span ng-click="check($event)"></span></td>
+						<td>方案名称</td>
+						<td>创建时间</td>
+						<td>创建人</td>
+						<td>方案属性</td>
+						<td>备注</td>
+						<td>方案完成度</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td><span ng-click="check($event)"></span></td>
+						<td>方案名称</td>
+						<td>创建时间</td>
+						<td>创建人</td>
+						<td>方案属性</td>
+						<td>备注</td>
+						<td>方案完成度</td>
+						<td>操作</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="pagination">
+				<div class="clearfix">
+					<ul uib-pagination total-items="bigTotalItems" force-ellipses="true" items-per-page={{pageSize}}  ng-model="currentPage"
+						ng-change="pageChanged(currentPage)" first-text="首页"  last-text="尾页" previous-text="上一页"  next-text="下一页" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></ul>
+					<span>共 {{numPages}} 页 </span>
+					<div class="pagination-dump">
+						<p class="dump-inp inline"> ,  跳转到   <input type="text" ng-keydown="getDumpOk($event,numPages)"  class="form-control inline"> </p>
+						<button type="button" class="inline btn btn-default btn-sm" ng-click="getDumpOk(null,numPages)">Go</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

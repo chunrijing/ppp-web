@@ -1,0 +1,388 @@
+/* tools */
+.absol {
+    position: absolute;
+}
+.rela {
+    position: relative;
+}
+.inline {
+    display: inline-block;
+}
+.monitor-border {
+    border: 1px solid #e6eaf1;
+}
+.monitor-border-orange {
+    border: 1px solid #fcc387;
+}
+.monitor-border-red {
+    border: 1px solid #eb6363;
+}
+.monitor-border.clear-bottom {
+    border-bottom: 1px solid #fff;
+}
+.monitor-darkblue-left {
+    border-left: 5px solid #262f3d;
+    padding-left: 10px;
+}
+.width60 {
+    width: 60px!important;
+}
+.font12 {
+    font-size: 12px!important;
+}
+.bg-lightgray {
+    background-color: #f5f7fb;
+}
+.bg-red,
+.bg-lightred:hover {
+    background-color: #eb6363;
+    opacity: 1;
+}
+.bg-orange,
+.bg-lightorange:hover {
+    background-color: #fcc387;
+    opacity: 1;
+}
+.bg-lightred {
+    background-color: #eb6363;
+    opacity: 0.7;
+}
+.bg-lightorange {
+    background-color: #fcc387;
+    opacity: 0.9;
+}
+.text-darkgrey {
+    color: #666;
+}
+.text-red {
+    color: #eb6363;
+}
+.text-orange {
+    color: #FABE00;
+}
+.text-blue {
+    color: #3685d3;
+}
+.border-red {
+    border: 1px solid #eb6363;
+}
+.form-box{
+   margin-top: 20%;
+}
+.vertical-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.align-right {
+    text-align:right;
+}
+/*sider*/
+.main-container .sidebar {
+    width: 17%;
+    border: 1px solid #ccc;
+    float: left;
+    padding:0 20px;
+    box-shadow: 0px 0px 2px 2px #d8dad9,
+    0px 0px 1px 0px #d8dad9,
+    0px 0px 0px 0px #f2f4f3,
+    0px 0px 0px 5px #f2f4f3;
+    border-radius: 6px;
+}
+.main-container .sidebar>h3{
+    padding-bottom: 10px;
+    border-bottom:1px solid #ddd;
+}
+.main-container .proUl{
+    width: 100%;line-height:40px;
+}
+.main-container .proUl>li{
+    cursor: pointer;
+}
+.main-container {
+    min-width: 760px;
+    padding: 18px 25px 20px 20px;
+    background: #fff;
+}
+.main-container .right-content {
+    margin-left: 17%;
+    padding-left: 20px;
+}
+.main-container .right-content>div{
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0px 0px 2px 2px #d8dad9,
+                0px 0px 1px 0px #d8dad9,
+                0px 0px 0px 0px #f2f4f3,
+                0px 0px 0px 5px #f2f4f3;
+    border-radius: 6px;
+}
+.main-container .plan{
+    margin-top: 21px;
+}
+.main-container .search-btn{
+    background: #4990e2;
+    height: 34px;
+    width: 34px;border-top-right-radius: 5px;border-bottom-right-radius:5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-container form{
+    position: relative;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.main-container form>img{
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:10px;
+    top:9px
+}
+.main-container .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.main-container .title h3{
+    padding-left: 10px;
+    border-left: 4px solid #3f92c8
+}
+.main-container .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-container .content ul{
+    line-height: 30px;
+    font-size: 12px;
+}
+.main-container .content>img{
+    width: 120px;
+    height:120px;
+}
+.main-container .right-content .planSearch{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-container .right-content .btns{
+    border: none;
+}
+.main-container .right-content button{
+    width: 90px;
+    height:35px;
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    outline: 0;
+}
+.main-container .plan>table{
+    width:100%;
+}
+.main-container .plan>table thead tr{
+    background: #e6e6e6;
+}
+.main-container .plan>table>tbody> tr> td,.main-container .plan>table>thead> tr> th{
+    height: 45px;
+    text-align: center;
+    border:1px solid #c8c8c8;
+}
+.main-container .plan>table tr td:nth-child(2){
+    cursor: pointer;
+}
+.main-container .plan>table tr span{
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    border: 1px solid #aaa;
+    background: white;
+}
+.main-container .plan>table tr span.background{
+    border: none;
+    background: url(../imgs/blue.png) no-repeat -49px 0;
+}
+.main-container .plan>table input{
+    width: 20px;
+    height:20px;
+}
+/*分页器*/
+.main-container .pagination {
+    float:left;margin:10px 0 20px 6px;width:calc(100% - 230px);text-align:center;
+}
+.main-container .pagination div{
+    display:inline-block;
+}
+.main-container .pagination+div{
+    float:left;
+}
+.main-container .pagination div:nth-child(2){
+    float:right;
+}
+.main-container .pagination  ul{
+    width:auto;margin-right:10px;
+}
+.main-container .pagination  ul+span{
+    margin: 18px 0 0 3px;
+    float: left;
+    font-size:14px;
+}
+.main-container .pagination-dump{
+    margin:2px 0 0 1px;
+}
+.main-container .pagination-dump>p{
+    height: 40px;
+    line-height: 46px;
+    font-size: 14px;
+}
+.main-container .pagination-dump>p input{
+    width: 63px;
+    height: 28px;padding:0 10px;
+}
+.pagination-dump button{
+    margin-top: 7px;
+    height: 28px;line-height:14px;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+    background:#4990e2;border-color:#4990e2;
+}
+/*弹框*/
+.modal{
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+}
+.modal-lg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-header, .modal-body, .modal-footer{
+    padding: 15px 30px
+}
+.plan-modal .modal-content{
+    width:60%;
+}
+.pro-modal .modal-content{
+    width: 60%;
+    /*height: 845px;*/
+}
+.plan-modal .modal-body table>tbody> tr> td:first-child{
+    width: 30%;
+    padding-left: 10px;
+}
+.pro-modal .modal-body{
+    padding-top: 40px;
+}
+.pro-modal .modal-body>table,.plan-modal .modal-body>table{
+    width:100%;
+    padding: 0 40px;
+    font-size: 12px;
+}
+.pro-modal .modal-body>table>tbody>tr:first-child span,.plan-modal table>tbody>tr:first-child span{
+    position: absolute;
+    font-size: 15px;
+    color: red;
+    left: 30px;
+}
+.pro-modal .modal-body>table>tbody> tr> td{
+    text-align: left;
+    height: 50px;
+}
+.pro-modal .modal-body>table>tbody> tr:last-child> td{
+    margin-top: 15px;
+}
+.pro-modal .modal-body>table>tbody> tr> td:first-child{
+    width: 30%;
+    padding-left: 10px;
+}
+
+.pro-modal .modal-body>table>tbody> tr> td:last-child{
+    width: 70%;
+}
+.pro-modal .modal-body>table>tbody> tr>td> input{
+    width: 90%;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #c8c8c8;
+    padding:10px;
+    outline:none;
+}
+.pro-modal .modal-body>table>tbody> tr:nth-last-child(3)>td> input{
+    width: 80%;
+    margin-right: 15px;
+}
+.pro-modal .modal-body>table>tbody> tr:last-child>td> input{
+    height: 42px;
+    border:none;
+}
+.pro-modal .dataStart input{
+    margin-top: 10px;
+}
+.pro-modal .job>div{
+    position: absolute;
+    width: 90%;
+    height:200px;
+    overflow: auto;
+    background: white;
+    border: 1px solid #eee;
+}
+.pro-modal .job>div>option{
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+    cursor: pointer;
+}
+.pro-modal .job>div>option:hover{
+    background: #f5f5f5;
+    color: #606060;
+}
+.pro-modal .modal-content table .glyphicon{
+    font-size: 14px;
+    cursor: pointer;
+}
+.pro-modal .job .glyphicon{
+    position: relative;
+    left: -10%;
+}
+.pro-modal .dataStart>.glyphicon{
+    position: relative;
+    left: 80%;
+    top: -25px;
+}
+#pic{
+    width:100px;
+    height:100px;
+    /*border-radius:50% ;*/
+    /*margin:20px auto;*/
+    cursor: pointer;
+}
+#imgPreview {
+    float: left;
+    border: none;
+}
+#imgPreview img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+/*新建方案*/
+.plan-modal .modal-body table tr th input{
+    outline:none;width: 90%;height: 36px;border-radius: 6px; border: 1px solid #c8c8c8;padding:10px;
+}
+.plan-modal .modal-body table tr th p{
+    color: red;
+    position: absolute;
+}
+.plan-modal .modal-body table tr th textarea{
+    outline:none;resize:none;margin-top: 30px;width: 90%;border-radius: 6px;
+}

@@ -1,0 +1,74 @@
+<div>
+    <div class="modal-header" >
+        <h4 class="modal-title" style="float: left;">新建项目</h4>
+        <button type="button" class="close" data-dismiss="modal" title="关闭" ng-click="cancel()">
+            <span aria-hidden="true" style="font-size: 30px">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" id="modal-body" style="padding-bottom: 0">
+        <table>
+            <tr>
+                <td><span>*</span>项目名称:</td>
+                <td><input type="text"  placeholder="请输入项目名称"  ng-model="proName"/></td>
+            </tr>
+            <!--<tr>
+                <td>所在地:</td>
+                <td><input type="text" id="txt_city" placeholder="请选择省/市/区" /></td>
+            </tr>-->
+            <tr>
+                <td>项目地址:</td>
+                <td><input type="text" placeholder="请输入详细地址" ng-model="address"/></td>
+            </tr>
+            <tr>
+                <td>实施机构:</td>
+                <td><input type="text" placeholder="请输入实施机构" ng-model="organization"/></td>
+            </tr>
+            <tr>
+                <td>社会资本方:</td>
+                <td><input type="text" placeholder="请输入社会资本方" ng-model="socialCapital"/></td>
+            </tr>
+            <tr>
+                <td>建设起始时间:</td>
+                <td class="dataStart">
+                    <input type="text" class="form-control" placeholder="请输入建设起始时间"  uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="glyphicon glyphicon-menu-down" ng-click="open1()"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>建设内容及规格:</td>
+                <td><input type="text" ng-model="constructionScale" /></td>
+            </tr>
+            <tr>
+                <td>建设投资:</td>
+                <td><input type="text"  ng-model="invest">万元</td>
+            </tr>
+            <tr>
+                <td>项目行业分布:</td>
+                <td class="job" style="position: relative;">
+                    <input type="text" placeholder="请输入项目行业分布" ng-model="selected" readonly="true"  ng-click="selectJob()"/>
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                    <div ng-show="jobShow">
+                        <option ng-repeat="item in jobList track by $index" ng-click="selectOption(item)">{{item}}</option>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="position: relative;top: -50px;">项目缩略图:</td>
+                <td>
+                    <div style="border: 1px solid #2196f3;width: 100px;height: 100px;margin-top: 30px;">
+                        <img id="pic" src="" ng-click="upload()">
+                    </div>
+                    <input id="upload" name="file"  type="file" multiple="multiple" style="opacity: 0;"/>
+                    <!--<div id="imgPreview"></div>
+                    <span class="upload-img glyphicon glyphicon-picture"><input id="fileUpload" accept="image/*" type="file" multiple="multiple"></span>-->
+    <!--</div>-->
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="modal-footer" style="border-top: none;padding-bottom: 15px">
+        <button class="btn btn-primary" ng-click="addPro()">确定</button>
+        <button class="btn btn-primary" ng-click="cancel()">取消</button>
+    </div>
+</div>
