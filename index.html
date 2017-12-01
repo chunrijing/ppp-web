@@ -6,16 +6,19 @@
 	<title></title>
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./lib/jquery-city/css/jquery.city.css">
-	<link rel="stylesheet" href="./lib/jquery-city/css/animate.min.css">
+	<!--<link rel="stylesheet" href="./lib/jquery-city/css/jquery.city.css">-->
+	<!--<link rel="stylesheet" href="./lib/jquery-city/css/animate.min.css">-->
 	<!--<link rel="stylesheet" href="./lib/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
 	<!-- project core CSS -->
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/project.css">
+	<link rel="stylesheet" href="css/paramForm.css">
+	<link rel="stylesheet" href="css/financeForm.css">
 	<link rel="stylesheet" href="css/ui.css">
 	<link rel="stylesheet" href="css/ui.progress-bar.css">
-
+	<!--日历插件字体图标-->
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_234130_nem7eskcrkpdgqfr.css">
 
 </head>
 
@@ -28,9 +31,10 @@
 <script type="text/javascript" src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
-<script src="lib/jquery-city/js/jquery.city.js"></script>
-<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
-<!--<script type="text/javascript" src="lib/layer/layer.js"></script>-->
+<script src="lib/echarts/echarts.common.min.js"></script>
+<script type="text/javascript" src="lib/layer/layer.min.js"></script>
+<!--时间控件-->
+<script type="text/javascript" src="lib/schedule/schedule.js"></script>
 
 <!-- main -->
 <script type="text/javascript" src="./modules/config.js"></script>
@@ -45,13 +49,36 @@
 <script src="./modules/directive/directive.js"></script>
 
 <!-- home -->
-<script type="text/javascript" src="./modules/controller/component.ctrl.js"></script>
 <script type="text/javascript" src="./modules/controller/project.ctrl.js"></script>
 <script type="text/javascript" src="./modules/controller/addModal.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/copyModal.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/contrastModal.ctrl.js"></script>
 <script type="text/javascript" src="./modules/controller/login.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/delete.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/paramForm.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/basis.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/constructInvest.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/contractor.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/business.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/income.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/taxes.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/cost/materials.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/cost/materialsAux.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/cost/materialsFuel.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/cost/salary.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/cost/otherCost.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/flowcash.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/basicForm/depriciationx.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/financeForm.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/auxiliary/rinvest.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/auxiliary/rmaterials.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/auxiliary/rmaterialsfuel.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/auxiliary/rsalary.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/balance.ctrl.js"></script>
+<script type="text/javascript" src="./modules/controller/financeForm/sensitivity.ctrl.js"></script>
 
 <!--plugin-->
-<script type="text/javascript" src="./modules/plugin/lazyload.js"></script>
+<!--<script type="text/javascript" src="./modules/plugin/lazyload.js"></script>-->
 <script type="text/javascript" src="./modules/plugin/popAlert.js"></script>
 
 </body>

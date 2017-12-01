@@ -3,117 +3,95 @@
 	<div class="sidebar">
 		<h3>项目列表</h3>
 		<form role="form">
-			<input type="text" placeholder="请输入项目名称" class="form-control col-xs-3 searchtext" ng-keydown="search($event,searchText)" ng-model="searchText">
-			<div class="absol search-btn"><img src="imgs/icon/icon-search.png" alt="" class="icon-search"></div>
+			<input type="text" placeholder="请输入项目名称" class="form-control col-xs-3 searchtext" ng-keydown="searchPro($event,searchProText)" ng-model="searchProText">
+			<div class="absol search-btn" ng-click="searchPro(null,searchProText)"><img src="imgs/icon/search.png" alt="" class="icon-search"></div>
 		</form>
 		<ul class="proUl">
-			<li>土建项目部1（30）</li>
-			<li> 土建项目部1（30）</li>
-			<li>土建项目部1（30）</li>
-			<li>土建项目部1（30）</li>
-			<li>土建项目部1（30）</li>
-			<li>土建项目部1（30）</li>
+			<li ng-repeat="item in proList track by $index" ng-click="proInfo($event,item)" on-finish-render-filters="completeRepeat" data-id="{{item.projectId}}">
+				<img style="width: 50px" >
+				<p data-id="{{item.name}}" title="{{item.name}}&nbsp;{{item.startTime}}">{{item.name}}&nbsp;{{item.startTime}}</p>
+			</li>
 		</ul>
 	</div>
 
 	<div class="right-content">
 		<div class="proInfo">
 			<div class="title">
-				<!--<span class="left"></span>-->
 				<h3>项目信息</h3>
 				<div class="btns">
-					<button type="button" ng-click="addPro()">添加项目</button>
-					<button type="button">编辑</button>
-					<button type="button">删除</button>
+					<button type="button" ng-click="addPro('addPro')">添加项目</button>
+					<button type="button" ng-click="addPro('editPro')">编辑</button>
+					<button type="button" ng-click="delete('pro')">删除</button>
 				</div>
 			</div>
 			<div class="content">
-				<img src="imgs/logo.png">
-				<ul class="ulLeft" style="flex-grow: 1">
-					<li>项目名称:</li>
-					<li>项目地址:</li>
-					<li>实施机构:</li>
-					<li>社会资本方:</li>
+				<img src="{{image}}">
+				<ul class="ulLeft">
+					<li title="{{name}}">项目名称:&nbsp;&nbsp;{{name}}</li>
+					<li title="{{address}}">项目地址:&nbsp;&nbsp;{{address}}</li>
+					<li title="{{organization}}">实施机构:&nbsp;&nbsp;{{organization}}</li>
+					<li title="{{socialCapital}}">社会资本方:&nbsp;&nbsp;{{socialCapital}}</li>
 				</ul>
-				<ul class="ulRigh" style="flex-grow: 2">
-					<li>建设起始时间:</li>
-					<li>建设内容及规模:</li>
-					<li>建设投资:</li>
-					<li>项目行业分布:{{city}}</li>
+				<ul class="ulRigh">
+					<li title="{{startTime}}">建设起始时间:&nbsp;&nbsp;{{startTime}}</li>
+					<li title="{{constructionScale}}">建设内容及规模:&nbsp;&nbsp;{{constructionScale}}</li>
+					<li title="{{invest}}">建设投资(万元):&nbsp;&nbsp;{{invest}}</li>
+					<li title="{{industryType}}">项目行业分布:&nbsp;&nbsp;{{industryType}}</li>
 				</ul>
 			</div>
 		</div>
 		<div class="plan">
 			<div class="title">
-				<!--<span class="left"></span>-->
 				<h3>方案列表</h3>
 			</div>
 			<div class="planSearch">
-				<form role="form" style="width: 268px">
-					<input type="text" placeholder="请输入方案名称" class="form-control col-xs-3 searchtext" ng-keydown="search($event,searchText)" ng-model="searchText">
-					<div class="absol search-btn"><img src="imgs/icon/icon-search.png" alt="" class="icon-search"></div>
+				<form role="form" style="width: 268px;">
+					<input type="text" placeholder="请输入方案名称" class="form-control col-xs-3 searchtext" ng-keydown="searchPlan($event,searchPlanText)" ng-model="searchPlanText">
+					<div style="" class="absol search-btn" ng-click="searchPlan(null,searchPlanText)"><img src="imgs/icon/search.png" alt="" class="icon-search"></div>
 				</form>
 				<div class="btns">
-					<button ng-click="addPlan()">新建</button>
-					<button>对比</button>
-					<button>删除</button>
+					<button ng-click="addPlan('addPlan')">新建</button>
+					<button ng-click="contrast()">对比</button>
+					<button ng-click="delete('plan')">删除</button>
 				</div>
 			</div>
-			<table border="1" cellspacing="0" cellpadding="0">
-				<thead>
-				<tr>
-					<th width="5%"><span class="thInput" ng-click="check($event)"></span></th>
-					<th width="25%">方案名称</th>
-					<th width="10%">创建时间</th>
-					<th width="10%">创建人</th>
-					<th width="10%">方案属性</th>
-					<th width="10%">备注</th>
-					<th width="20%">方案完成度</th>
-					<th width="10%">操作</th>
-				</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><span ng-click="check($event)"></span></td>
-						<td>方案名称</td>
-						<td>创建时间</td>
-						<td>创建人</td>
-						<td>方案属性</td>
-						<td>备注</td>
-						<td>方案完成度</td>
-						<td>操作</td>
-					</tr>
-					<tr>
-						<td><span ng-click="check($event)"></span></td>
-						<td>方案名称</td>
-						<td>创建时间</td>
-						<td>创建人</td>
-						<td>方案属性</td>
-						<td>备注</td>
-						<td>方案完成度</td>
-						<td>操作</td>
-					</tr>
-					<tr>
-						<td><span ng-click="check($event)"></span></td>
-						<td>方案名称</td>
-						<td>创建时间</td>
-						<td>创建人</td>
-						<td>方案属性</td>
-						<td>备注</td>
-						<td>方案完成度</td>
-						<td>操作</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<div class="clearfix">
-					<ul uib-pagination total-items="bigTotalItems" force-ellipses="true" items-per-page={{pageSize}}  ng-model="currentPage"
-						ng-change="pageChanged(currentPage)" first-text="首页"  last-text="尾页" previous-text="上一页"  next-text="下一页" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></ul>
-					<span>共 {{numPages}} 页 </span>
-					<div class="pagination-dump">
-						<p class="dump-inp inline"> ,  跳转到   <input type="text" ng-keydown="getDumpOk($event,numPages)"  class="form-control inline"> </p>
-						<button type="button" class="inline btn btn-default btn-sm" ng-click="getDumpOk(null,numPages)">Go</button>
-					</div>
+			<div class="planTable" style="position: relative">
+				<div class="thead" style="position: absolute;width: 100%">
+					<table>
+						<thead>
+						<tr>
+							<th width="5%"><span class="checkInput" ng-click="checkTh($event)"></span></th>
+							<th width="20%">方案名称</th>
+							<th width="10%">创建时间</th>
+							<th width="10%">创建人</th>
+							<th width="15%">方案属性</th>
+							<th width="15%">备注</th>
+							<th width="15%">方案完成度</th>
+							<th width="10%">操作</th>
+						</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="tbody scrollbars" style="overflow: auto;padding-top: 46px">
+					<table border="1" cellspacing="0" cellpadding="0">
+						<tbody>
+						<tr ng-repeat="item in planList" on-finish-render-filters="completeRepeat" data-id="{{item.schemeId}}" data-name="{{item.schemeName}}" data-isReport="{{item.isReport}}">
+							<td width="5%"><span class="checkInput" ng-click="check($event)"></span></td>
+							<td width="20%"><input type="text"  ng-click="paramForm(item.schemeId,item.schemeName,item.isReport)" readonly value="{{item.schemeName}}" title="{{item.schemeName}}"></td>
+							<td width="10%" ng-click="paramForm(item.schemeId,item.schemeName,item.isReport)">{{item.createDate}}</td>
+							<td width="10%" ng-click="paramForm(item.schemeId,item.schemeName,item.isReport)">{{item.realName}}</td>
+							<td width="15%" ng-click="paramForm(item.schemeId,item.schemeName,item.isReport)">{{item.schemeAttribute}}</td>
+							<td width="15%"><input type="text" ng-click="paramForm(item.schemeId,item.schemeName,item.isReport)" value="{{item.remark}}" title="{{item.remark}}" readonly></td>
+							<td width="15%" ng-click="paramForm(item.schemeId,item.schemeName,item.isReport)" style="padding: 0 10px;">
+								<uib-progressbar class="progress-striped active" value="item.parcents" type="{{item.parcent}}">{{item.parcent}}</uib-progressbar>
+							</td>
+							<td width="10%">
+								<img src="imgs/icon/edit.png" title="编辑" class="icons edit" ng-click="addPlan('editPlan',item)">
+								<img src="imgs/icon/copy.png" title="复制" class="icons copy" ng-click="copyPlan(item.schemeId,item.schemeName)">
+							</td>
+						</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>

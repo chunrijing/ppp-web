@@ -2,45 +2,38 @@
 
 angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('/project');
-
+		$urlRouterProvider.otherwise('/login');
 		$stateProvider.
 		 state('login', {
 			url:'/login',
+			params:{str: null},
 			templateUrl: 'template/core/login.html',
 			controller:'loginCtrl',
 			data: {
 				displayName: 'login'
 			}
 		}).state('project', {
-			//params:{"name":null},
 			url:'/project',
 			templateUrl: 'template/component/project.html',
 			controller:'projectCtrl',
 			data: {
 				displayName: 'project'
 			}
-		})/*.state('upload',{
-			url:'/upload',
-			templateUrl:'template/component/upload.html',
-			controller:'uploadCtrl',
+		}).state('paramForm',{
+			url:'/paramForm',
+			params:{projectId: null,schemeId: null,schemeName: null,proName: null,isReport: null},
+			templateUrl:'template/component/paramForm.html',
+			controller:'paramFormCtrl',
 			displayName:{
-				displayName:"upload"
+				displayName:"paramForm"
 			}
-		}).state('audit',{
-			url:'/audit',
-			templateUrl:'template/component/audit.html',
-			controller:'auditCtrl',
+		}).state('financeForm',{
+			url:'/financeForm',
+			templateUrl:'template/component/financeForm.html',
+			controller:'financeFormCtrl',
 			displayName:{
-				displayName:"audit"
+				displayName:"financeForm"
 			}
-		}).state('largePattern',{
-			url:'/largePattern',
-			templateUrl:'template/component/largePattern.html',
-			controller:'largePatternCtrl',
-			data:{
-				displayName:"largePattern"
-			}
-		})*/;
+		});
 	}
 ]);

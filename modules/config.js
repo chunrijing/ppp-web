@@ -12,16 +12,10 @@ var ApplicationConfiguration = (function(){
 	};
 
 	var urls = {
-        //apiUrl: hostUrl
-		apiUrl: 'http://172.16.21.47:8080/bx/rs/TestRestServices/testRestMethod?str=15221113063'
-        // wwwUrl: 'https://www.suncloud.cn',
-        // panelApiUrl: 'https://panel.suncloud.cn/api/index.php?r=',
-        // loginUrl: 'https://passport.suncloud.cn/index.php?client_id=panel'
+		//apiUrl: 'http://192.168.3.156:8080/ppp/rs/'
+		apiUrl: 'http://172.16.21.142:8080/ppp/rs/'
+		//apiUrl: 'http://180.167.25.170:8088/ppp/rs/'
     };
-  
-    /*var pagesize = {
-		pageSize: pageSize
-	};*/
 
 	return {
 		applicationModuleName: applicationModuleName,
@@ -30,7 +24,5 @@ var ApplicationConfiguration = (function(){
 		urls:urls,
 		tempList:tempList
 	};
-
-
 })();
 

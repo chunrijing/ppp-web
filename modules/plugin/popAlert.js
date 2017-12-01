@@ -4,11 +4,13 @@ window.onload=function(){
 
         if(_alertDom.length==0){
             let _html=`
-            <div class="modal fade alert_model bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display:flex;align-items:center;">
+            <div class="modal fade alert_model bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="width:480px;">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                     `+str+`

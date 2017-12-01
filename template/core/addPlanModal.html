@@ -1,6 +1,6 @@
 <div>
     <div class="modal-header" >
-        <h4 class="modal-title" style="float: left;">新建方案</h4>
+        <h4 class="modal-title" style="float: left;">{{planType}}</h4>
         <button type="button" class="close" data-dismiss="modal" title="关闭" ng-click="cancel()">
             <span aria-hidden="true" style="font-size: 30px">&times;</span>
         </button>
@@ -10,22 +10,22 @@
             <tr>
                 <th><span style="left: 20px">*</span>方案名称:</th>
                 <th>
-                    <input type="text" placeholder="请输入方案名称" >
+                    <input type="text" maxlength="20" placeholder="请输入方案名称" ng-model="schemeName" required />
                     <p ng-show="isPlanName">方案名称重复，请重新输入</p>
+                    <p ng-show="isBlock">方案名称不能为空</p>
                 </th>
             </tr>
             <tr>
                 <th style="float: left;margin-top: 30px">方案备注:</th>
                 <th>
-                    <textarea  cols="30" rows="10" placeholder="输入备注内容最多可输入50个汉字"></textarea>
+                    <textarea  cols="30" rows="10" maxlength="100" placeholder="输入备注内容最多可输入100个汉字" ng-model="remark">{{remark}}</textarea>
                 </th>
             </tr>
         </table>
-        <input  type="file" multiple="multiple">
 
     </div>
     <div class="modal-footer" style="border-top: none;padding-bottom: 15px">
-        <button class="btn btn-primary" ng-click="addPlan()">确定</button>
+        <button class="btn btn-primary" ng-click="okPlan()">确定</button>
         <button class="btn btn-primary" ng-click="cancel()">取消</button>
     </div>
 </div>
