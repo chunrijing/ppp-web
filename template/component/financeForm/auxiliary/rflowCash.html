@@ -1,0 +1,34 @@
+<div class="rflowCash scrollbars" ng-controller="rmaterialsCtrl">
+    <div class="rmaterialsTable table_fixed">
+        <table class="">
+            <thead>
+            <tr>
+                <th width="60px" rowspan="2">序号</th>
+                <th width="200px" rowspan="2">项目</th>
+                <th ng-show="way==1" width="100px" rowspan="2">最低周转天数</th>
+                <th ng-show="way==1" width="100px" rowspan="2">周转次数</th>
+                <th ng-show="way!=1" width="100px" rowspan="2">合计</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr index="{{$index}}" ng-repeat="item in list track by $index"></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="rmaterialsTable tableAuto scrollbars">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="{{periodConstruction}}">建设期</th>
+                <th colspan="{{periodOptrationa}}">运营期</th>
+            </tr>
+            <tr>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr index="{{$index}}" ng-repeat="item in list track by $index"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

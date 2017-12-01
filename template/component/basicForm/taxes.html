@@ -1,0 +1,42 @@
+<div class="taxes" ng-controller="taxesCtrl">
+    <div class="btns">
+        <button class="addLine" ng-click="addTaxes()">增加行</button>
+        <button class="deleLine" ng-click="deleteTaxes()">删除行</button>
+    </div>
+    <div class="conTop">
+        <div class="tableCon">
+            <div class="head tableLeft">
+                <table>
+                    <thead>
+                    <tr>
+                        <th width="10%">序号</th>
+                        <th width="45%">项目</th>
+                        <th width="45%">比例(%)</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="body tableLeft scrollbars">
+                <table>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right">
+            <p>1.纳税人所在地为城市市区的，税率为7%。</p>
+            <p><span>1.1教育费附加：</span>教育费附加的征收率为3%。</p>
+            <p><span>1.2地方教育附加：</span>地方教育附加征收率为2%。</p>
+            <p><span>1.3城市建设维护税：</span></p>
+            <p><i>1</i>.纳税人所在地为城市市区的，税率为7%。</p>
+            <p><i>2</i>.纳税人所在地为县城、建制镇的，税率为5%。</p>
+            <p><i>3</i>.纳税人所在地不在城市市区、县城或者建制镇的，税率为1%。</p>
+            <p>城市建设维护税、教育费附加、地方教育附加的计税基数为增值税</p>
+        </div>
+    </div>
+
+    <!--<div class="markText">
+        <span>备注：</span>
+        <textarea name="" id="" cols="50" rows="3"></textarea>
+    </div>-->
+</div>

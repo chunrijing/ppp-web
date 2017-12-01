@@ -1,0 +1,33 @@
+<div class="balance scrollbars" ng-controller="balanceCtrl">
+    <div class="form">
+        <div class="rmaterialsTable table_fixed">
+            <table class="">
+                <thead>
+                <tr>
+                    <th width="60px">序号</th>
+                    <th width="100px">项目</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr index="{{$index}}" ng-repeat="item in list track by $index"></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="rmaterialsTable tableAuto scrollbars">
+            <table>
+                <thead>
+                <tr>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr index="{{$index}}" ng-repeat="item in list track by $index"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="charts">
+
+    </div>
+    <p><span>盈亏平衡点：{{rate}}</span><span>盈亏平衡点单价：{{price}}</span><span>盈亏平衡点产量：{{yield}}</span></p>
+</div>

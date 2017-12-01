@@ -1,0 +1,17 @@
+<div class="rFinanceGather scrollbars" ng-controller="rmaterialsCtrl">
+    <div class="rmaterialsTable table_fixed" style="width: 100%">
+        <table style="width: 100%">
+            <thead>
+            <tr>
+                <th width="10%" rowspan="2">序号</th>
+                <th width="35%" rowspan="2">项目名称</th>
+                <th width="20%" rowspan="2">数据</th>
+                <th width="35%" rowspan="2">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr index="{{$index}}" ng-repeat="item in list track by $index"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

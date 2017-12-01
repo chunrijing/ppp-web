@@ -1,0 +1,733 @@
+.basicForm,.financeForm{
+    padding: 10px 25px 20px 20px;
+    background: #fff;
+    overflow: hidden;
+    min-width: 1380px;
+    overflow-x: auto;
+}
+ .route{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+ .route>i{
+    margin: 0 10px;
+}
+ .route>span{
+    color: #2196f3;
+}
+.basicForm .title{
+    height: 65px;
+    font-size: 23px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.basicForm .title>span:first-child{
+    border-left: 4px solid #2196f3;
+    padding-left: 10px;
+}
+.basicForm .slider, .basicForm .container,.basicForm .title,.financeForm .slider,.financeForm .container,.financeForm .rmarkText{
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 2px 2px #d8dad9,
+    0px 0px 1px 0px #d8dad9,
+    0px 0px 0px 0px #f2f4f3,
+    0px 0px 0px 5px #f2f4f3;
+    border-radius: 6px;
+}
+.basicForm>div{
+    margin-top: 20px;
+}
+.basicForm .slider,.financeForm .slider{
+    width:17%;
+    float: left;
+    padding: 10px;
+}
+.basicForm .container,.financeForm .container{
+    float: left;
+    width: 82%;
+    margin-left: 1%;
+    padding: 10px;
+    padding-left: 20px;
+}
+.basicForm .slider canvas{
+    width: 60px;
+    height: 60px;
+}
+/*公用slider*/
+ .slider>ul>li{
+    border-bottom: 1px solid #e6e6e6;
+}
+ .slider>ul>li:last-child{
+    border: none;
+}
+ .slider>ul>li>div{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    border-left: 4px solid #fff;
+}
+ .slider>ul>li>div:hover {
+    border-left: 4px solid #2196f3;
+    background: #f5f6fa;
+}
+.activeSlider{
+    border-left: 4px solid #2196f3!important;
+    background: #f5f6fa;
+}
+ .slider>ul>li>ul{
+    margin-left: 50px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+ .slider>ul>li>ul>li{
+    line-height: 35px;
+    padding-left: 10%;
+    cursor: pointer;
+    border-left: 4px solid #fff;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+ .slider>ul>li>ul>li:hover{
+    border-left: 4px solid #2196f3!important;
+    background: #f5f6fa;
+}
+.basicForm .container{
+    position: relative;
+}
+/*底部按钮*/
+.basicForm .container>.btns{
+    width: 100%;
+    height:70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid #ddd;
+    box-shadow: 0px 0px 2px 2px #d8dad9;
+    background: white;
+    margin: 0;
+}
+.basicForm .btns>button{
+    width: 118px;
+    height: 38px;
+    border: 1px solid #2196f3;
+    background: #fff;
+    margin: 0 10px;
+    color: #2196f3;
+    border-radius: 6px;
+}
+.basicForm .btns>button:hover{
+    background: #8db8fd;
+    color: #fff;
+}
+/*.disab{
+    background: #e6e6e6!important;
+    color: #d0d0d0!important;
+    border-color: #c8c8c8!important;
+}*/
+/*form*/
+.basicForm .form>p{
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    padding-left:0;
+}
+.basicForm .form>div>div{
+    height: 100%;
+}
+.delete::-webkit-inner-spin-button {
+    -webkit-appearance: none;    /* 上下小箭头按钮 */
+
+}
+::-webkit-textfield-decoration-container {
+    /*background-color: #f0f3f9;*/
+}
+/*form*/
+.basicForm .form .basic table input{
+    width: 198px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #c8c8c8;
+    padding:10px;
+}
+.basicForm .form table input{
+    outline:none;
+}
+.basicForm .form input[disabled="disabled"]{
+    background: #fff;
+}
+.basicForm .form .basic{
+    overflow: hidden;
+    padding: 20px 0;
+}
+.basicForm .form .basic>table{
+    float: left;
+    font-size: 13px;
+}
+.basicForm .form .basic>table tr>td{
+    height: 45px;
+    /*line-height: 45px;*/
+}
+.basicForm .basic .basicLeft{
+    width:40%;
+}
+.basicForm .basic .basicRight{
+    width:58%;
+}
+.basicForm .form .basicLeft>tbody>tr>td:first-child{
+    width: 50%;
+    min-width: 245px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+ }
+.basicForm .form .basicRight>tbody>tr>td:first-child{
+    width: 36%;
+    min-width: 254px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.basicForm .basic>table>tbody>tr>td:last-child{
+    position: relative;
+}
+.basicForm .basic>table .glyphicon{
+    color: #6fbbf7;
+    font-size: 14px;
+    position: absolute;
+    left: 170px;
+    top:15px;
+    cursor: pointer;
+    z-index: 10;
+}
+.basicForm .basic>table tr td:last-child>div{
+    position: absolute;z-index: 100;border: 1px solid #ddd;background: #fff;width: 198px;border-radius: 6px;text-align: center;
+    display: none;
+}
+.basicForm .basic>table tr td:last-child>div option{
+    cursor: pointer;
+    padding: 10px 0;
+}
+.basicForm .basic>table tr td:last-child>div option:hover{
+    background: #f5f5f5;
+    color: #606060;
+    border-color: #c8c8c8;
+}
+.focused{
+    border:  1px solid red!important;
+}
+.basicForm .basic tr td{
+    border: none;
+    text-align: left;
+}
+/*建设投资参数表*/
+.invTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btns{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+}
+.invTitle .addSele{
+    display: flex;
+}
+.invTitle .addSele>div input{
+    width: 100px;
+    border:1px solid #c8c8c8;
+    border-radius: 6px;
+    padding: 6px;
+    outline: none;
+}
+.invTitle .addSele>div{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.invTitle .addSele>div span{
+    margin-right: 10px;
+    font-size: 14px;
+}
+.markText{
+    position: absolute;
+    bottom: 100px;
+    width: 97%;
+    background: white;
+}
+.markText textarea{
+    outline: none;
+    width: 95%;
+    resize: none;
+    padding: 6px;
+    border-radius: 6px;
+}
+.markText>span{
+    display: inline-block;
+    height:96%;
+    vertical-align: top;
+}
+.constructInvest .tableDiv{
+    position: relative;
+    /*max-height: 420px;*/
+    overflow: hidden;
+}
+.constructInvest .tableDiv>div:first-child{
+    position: absolute;
+    width: 100%;
+}
+.constructInvest .investTableHead{
+    /*position: absolute;*/
+}
+.constructInvest .formTable{
+    padding-top: 60px;
+    /*max-height: 360px;*/
+    overflow-y: auto;
+}
+.constructInvest .investTableHead tr th{
+    border-bottom: none;
+}
+.investTable{
+    width:100%;
+}
+.investTable thead tr{
+    background: #e6e6e6;
+}
+.investTable tr th,.investTable tr td{
+    font-size: 14px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #c8c8c8;
+}
+.investTable input{
+    width: 100%!important;
+    height:100%!important;
+    border: none;
+}
+.investTable input[type=number]{
+    text-align: center;
+}
+.investTable input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.constructInvest .investTableBody>tbody> tr:hover input{
+    border-top: 1px solid #2196f3!important;
+    border-bottom: 1px solid #2196f3!important;
+}
+/*
+
+.constructInvest .investTableBody>tbody> tr:hover input{
+    background: #f7faf9;
+*/
+
+.constructInvest .investTableBody>tbody> tr td:first-child{
+    cursor: pointer;
+}
+.inputClick input{
+    /*background: #f7faf9;*/
+    border-top: 1px solid #2196f3!important;
+    border-bottom: 1px solid #2196f3!important;
+}
+/*.inputClick td{
+    border-top: 1px solid #2196f3!important;
+    border-bottom: 1px solid #2196f3!important;
+}*/
+.constructInvest .investTableBody .glyphicon{
+    position: absolute;
+    left: 85%;
+    top: 32%;
+    cursor: pointer;
+    color: rgb(33, 150, 243);
+}
+.constructInvest .investTableBody tr td:nth-child(2) input{
+    text-align: center;
+}
+.seleName{
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    z-index: 10;
+    font-size:10px;
+    overflow: auto;
+}
+.seleName>option{
+    /*line-height: 40px;*/
+    padding: 10px 0;
+}
+.seleName>option:hover{
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #606060;
+    border-color: #c8c8c8;
+}
+
+/*总包方*/
+.contractor{
+    padding: 20px 0;
+}
+.contractor .conTop{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    overflow: auto;
+}
+.contractor .tableLeft{
+    width: 70%;
+    position: relative;
+}
+.contractor .tableLeft>div{
+    width:100%;
+}
+.contractor .tableLeft table{
+    width:100%;
+}
+.contractor .tableLeft .tableHead{
+    position: absolute;
+}
+.contractor .tableLeft .tableHead table:first-child{
+    background: #e6e6e6;
+}
+.contractor .tableBody{
+    height: 100%;
+    padding-top: 30px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+ .tableLeft table th, .tableLeft table td{
+    border: 1px solid #c8c8c8;
+    text-align: center;
+    height: 30px;
+}
+ .tableLeft table:first-child th{
+    border-bottom: none;
+}
+ .tableLeft td input{
+     padding: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+     border-radius: 0;
+}
+.tableLeft table tbody td:nth-child(2){
+    /*text-align: left;*/
+}
+.contractor .right{
+    width: 30%;
+    padding: 0 10px;
+}
+.contractor .right p{
+    font-size: 14px;
+    line-height: 17px;
+}
+.contractor tr td input{
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+}
+
+/*收入预测*/
+.tableCon{
+    padding: 0 10px;
+    /*max-height: 360px;*/
+    overflow: hidden;
+    position: relative;
+}
+.tableLeft table{
+    width: 100%;
+}
+.head table{
+    background: #e6e6e6;
+}
+/*公共*/
+.selDiv{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.selDiv>div{
+    display: none;
+    position: absolute;
+    z-index: 100;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100px;
+    /*line-height: 45px;*/
+    border-radius: 6px;
+    text-align: center;
+    top: 38px;
+}
+ .selDiv>div option{
+    cursor: pointer;
+     padding: 10px 0;
+}
+.selDiv .glyphicon{
+    position: relative;
+    left: -25px;
+    cursor: pointer;
+    color: #6fbbf7;
+    font-size: 14px;
+}
+.income .tableLeft{
+    width: 100%;
+}
+.income .head{
+    position: absolute;
+    padding-right: 20px;
+    z-index: 10;
+}
+.income .body{
+    /*height: 360px;*/
+    overflow: auto;
+    padding-top: 30px;
+}
+.income .body table tr:not(.total) td:nth-child(1){
+    cursor: pointer;
+}
+.income .body table tr:not(.total):hover td{
+    background: #f7faf9;
+}
+
+.income .body table tr:not(.total):hover input{
+    /*background: #f7faf9;*/
+}
+.selTd{
+    position: relative;
+}
+.selTd .glyphicon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(33, 150, 243);
+}
+.income .body .selTd input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+
+/*附加税金*/
+.taxes .tableCon{
+    width: 70%;
+}
+.taxes .right{
+    width: 30%;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.taxes .right p{
+    line-height: 20px;
+}
+.taxes .right p>i{
+    font-size: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 14px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.taxes .tableCon table{
+    width: 100%;
+}
+.taxes .body tr td:first-child{
+    cursor: pointer;
+}
+.taxes .body tr td:nth-child(2) input{
+    /*text-align: left;*/
+}
+.taxes .conTop{
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.taxes .tableCon{
+    flex-grow: 2;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+.taxes .tableCon>div{
+    width: 100%;
+}
+.taxes .head{
+    /*width: 100%;*/
+    position: absolute;
+}
+.taxes .head table{
+    width: 100%;
+}
+.taxes .body{
+    padding-top: 30px;
+    /*height: 320px;*/
+    overflow: auto;
+}
+.table th,.table td{
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px!important;
+    vertical-align: middle!important;
+    text-align: center;
+    border: 1px solid #c8c8c8;
+    padding: 0!important;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.table td input{
+    width: 100%;
+    height: 100%;
+    border:1px solid white;
+    text-align: center;
+}
+.table .year{
+    background: #e6e6e6;
+}
+/*营业分布*/
+.business .table{
+    margin: 20px 0;
+}
+.business .table th,.business .table td{
+    width: 6.25%!important;
+}
+/*相关成本*/
+.materials .body,.materialsAux .body,.materialsFuel .body,.salary .body{
+    height: 360px;
+    overflow: auto;
+    padding-top: 30px;
+}
+.materials .head,.materialsAux .head,.materialsFuel .head,.salary .head {
+    width: 100%;
+    position: absolute;
+    padding-right: 20px;
+    z-index: 10;
+}
+.materials .body tr td:first-child,.materialsAux .body tr td:first-child,.materialsFuel .body tr td:first-child,
+.salary .body tr td:first-child{
+    cursor: pointer;
+}
+.materialsFuel .body tr td:nth-child(2) input{
+    /*text-align: left;*/
+}
+.salary .body tr td{
+    width: 15%;
+}.salary .body tr td:first-child{
+    width: 10%;
+ }
+ /*其他费用参数表*/
+.otherCost .tableCon{
+    margin: 20px 0;
+}
+.otherCost .right{
+    padding: 0 10px;
+    font-size: 14px;
+}
+.otherCost .right p{
+    line-height: 17px;
+}
+.flowcash .selectCon,.contrastModal .selectCon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.flowcash input,.contrastModal .selectCon input{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px;
+    outline: none;
+}
+.flowcash .selectCon .glyphicon,.contrastModal .selectCon .glyphicon{
+    cursor: pointer;
+    left: -30px;
+    color: rgb(33, 150, 243);
+}
+.flowcash .seleName,.contrastModal .seleName{
+    width: 188px;
+    top:35px;
+    left: 84px;
+}
+.flowcash .seleName>option,.contrastModal .seleName>option{
+    padding: 10px 6px;
+}
+.flowcash .tableLeft{
+    width: 70%;
+}
+.flowcash .tableLeft tbody tr td:first-child{
+    padding: 0 6px;
+    /*text-align: left;*/
+}
+.flowcash .tableLeft>div{
+    display: flex;
+    align-items: center;
+}
+.flowcash .tableLeft>div>input{
+    width: 140px;
+}
+.flowcash table input{
+    border: 1px solid #fff;
+}
+/**/
+.constructInvest input[readonly=readonly]{
+    background: #e6e6e6;
+}
+
+.basicForm .container .btns>button[disabled='disabled']{
+    background: #e6e6e6!important;
+    color: #d0d0d0!important;
+    border-color: #c8c8c8!important;
+}
+
+.layui-layer-loading .layui-layer-content{
+    width: 80px!important;
+    text-align: center;
+}
+.readonlyStyle{
+    background: #e6e6e6;
+}
+
+/*参数表合计行斜线*/
+ .total td, .line_add{
+    position: relative;
+    text-align: center!important;
+}
+ .total td .line, .line_add .line{
+    width: 30%;
+    height: 2px;
+    left: 35%;
+    position: absolute;
+    background: #c8c8c8;
+
+}
+ .materialsFuel .line{
+     top: 14px;
+ }
+ /*维持运营投资参数表*/
+.depriciationx .head{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+.depriciationx .body{
+    padding-top: 30px;
+    padding-bottom: 2px;
+    overflow: auto;
+}
+.depriciationx .seleName{
+    height: 200px;
+    overflow: auto;
+}

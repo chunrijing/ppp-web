@@ -1,0 +1,40 @@
+<div style="padding-bottom: 15px">
+    <div class="modal-header" >
+        <h4 class="modal-title" style="float: left;font-size: 20px;font-weight: 600">方案对比</h4>
+        <button type="button" class="close" data-dismiss="modal" title="关闭" ng-click="cancel()">
+            <span aria-hidden="true" style="font-size: 30px">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" id="modal-body" style="padding-bottom: 15px;">
+        <div class="selectCon">
+            基准方案：&nbsp;<input type="text" ng-model="baseName">
+            <span ng-click="showHide($event)" class="glyphicon glyphicon-menu-down"></span>
+            <div class="seleName">
+                <option ng-repeat="item in scheList track by $index" ng-click="select(item.name,item.id)">{{item.name}}</option>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="fixCon">
+                <table class="tableFixed">
+                    <tr>
+                        <th>序号</th>
+                        <th>项目名称</th>
+                        <th ng-repeat="item in names track by $index" title="{{item}}"><input type="text" readonly="readonly" value="{{item}}" title="{{item}}"></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="autoCon">
+                <table class="tableAuto">
+                    <tbody>
+
+                    </tbody>
+                    <!--<tr ng-repeat="item in count track by $index"></tr>-->
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer" style="border-top: none;padding-bottom: 15px;justify-content: flex-end">
+        <button class="btn btn-primary" ng-click="export()">导出</button>
+        <!--<button class="btn btn-primary" ng-click="cancel()">取消</button>-->
+    </div>
+</div>

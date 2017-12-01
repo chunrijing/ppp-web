@@ -1,0 +1,64 @@
+<div class="flowcash" ng-controller="flowcashCtrl">
+    <div class="selectCon">
+        结算方式：&nbsp;<input type="text" value="{{estimateWay==1?'详细估算法':(estimateWay==2?'按经营成本估算':(estimateWay==3?'按营业收入估算':'自行填写'))}}">
+        <span ng-click="showHide($event)" class="glyphicon glyphicon-menu-down"></span>
+        <div class="seleName">
+            <option ng-click="select($event,1)">详细估算法</option>
+            <option ng-click="select($event,2)">按经营成本估算</option>
+            <option ng-click="select($event,3)">按营业收入估算</option>
+            <option ng-click="select($event,4)">自行填写</option>
+        </div>
+    </div>
+    <div class="tableLeft">
+        <table ng-if="estimateWay==1">
+            <thead>
+            <tr>
+                <th width="50%">项目</th>
+                <th width="50%">周转天数(天)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>应收账款</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{prepayments}}" min="0" max="360" set-focus></td>
+            </tr>
+            <tr>
+                <td>产成品</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{finishedGoods}}" min="0" max="360" set-focus></td>
+            </tr>
+            <tr>
+                <td>原材料</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{sourceMaterial}}" min="0" max="360" set-focus></td>
+            </tr>
+            <tr>
+                <td>现金</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{cash}}" min="0" max="360" set-focus></td>
+            </tr>
+            <tr>
+                <td>燃料</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{fuel}}" min="0" max="360" set-focus></td>
+            </tr>
+            <tr>
+                <td>在产品</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{productingGoods}}" min="0" max="360" set-focus></td>
+            </tr>
+            <tr>
+                <td>应付账款</td>
+                <td class="amount"><input type="number" maxlength="3" value="{{accountsPayable}}" min="0" max="360" set-focus></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="costRatio" ng-if="estimateWay==2">
+            <span>按经营成本比例(%)：&nbsp;</span>
+            <input type="number" min="0" step="0.01" set-focus value="{{costRatio}}" data-num="{{costRatios}}">
+        </div>
+        <div class="incomeRatio" ng-if="estimateWay==3">
+            <span>按营业收入比例(%)：&nbsp;</span>
+            <input type="number" min="0" step="0.01" set-focus value="{{incomeRatio}}" data-num="{{incomeRatios}}">
+        </div>
+        <div class="manualFill" ng-if="estimateWay==4">
+            <span>手动填写(万元)：&nbsp;</span>
+            <input type="number" min="0" step="0.01" set-focus value="{{manualFill}}" data-num="{{manualFills}}">
+        </div>
+    </div>
+</div>

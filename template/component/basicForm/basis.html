@@ -1,0 +1,149 @@
+<div class="basic" ng-controller="basisCtrl">
+    <table class="basicLeft">
+        <tr>
+            <td>1.&nbsp;建设期（年）:</td>
+            <td><input class="periodConstruction" type="number" maxlength="2" name="points" min="1" max="5" ng-focus required ng-model="obj.periodConstruction"/></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;运营期（年）:</td>
+            <td class="optrationa">
+                <input class="periodOptrationa" type="number" maxlength="2"  name="points" min="2" max="30" ng-focus required ng-model="obj.periodOptrationa"/>
+                <p style="color: red;display: none;line-height: 15px">运营期大于建设期</p>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;合作期（年）:</td><!--periodCooperation-->
+            <td class="">
+                <input class="option" type="text" maxlength="3"  disabled="disabled" value="{{obj.periodConstruction+obj.periodOptrationa}}" />
+                <p style="color: red;display: none">合作期不能超过30</p>
+            </td>
+        </tr>
+        <tr>
+            <td>2.&nbsp;项目运作方式:</td>
+            <td>
+                <input class="projectOperation" type="text" ng-model="obj.projectOperation" readonly="readonly">
+                <span ng-click="showOrHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                <div >
+                    <option ng-click="selectOperation($event,1,'BOT')">BOT</option>
+                    <option ng-click="selectOperation($event,2,'TOT')">TOT</option>
+                    <option ng-click="selectOperation($event,3,'BOOT(BOO)')">BOOT(BOO)</option>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>3.&nbsp;项目资本金（%）:</td>
+            <td>
+                <input class="projectCapital" type="number" ng-focus min="0" max="100" ng-model="obj.projectCapital">
+                <!--<span class="glyphicon glyphicon-menu-down"></span>-->
+            </td>
+        </tr>
+        <tr>
+            <td>4.&nbsp;铺底流动资金占比（%）:</td>
+            <td>
+                <input class="bottomRatio" type="number" ng-focus min="0" max="100" ng-model="obj.bottomRatio">
+                <!--<span class="glyphicon glyphicon-menu-down"></span>-->
+            </td>
+        </tr>
+        <tr>
+            <td>5.&nbsp;所得税率（%）:</td>
+            <td>
+                <input class="delete incomeTaxRate" type="number" ng-model="obj.incomeTaxRate" readonly="readonly" />
+                <span ng-click="showOrHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                <div>
+                    <option ng-click="selectRate($event,25)">25</option>
+                    <option ng-click="selectRate($event,15)">15</option>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>6.&nbsp;提取法定盈余公积比例（%）:</td>
+            <td>
+                <input class="legalRatio" type="number" maxlength="3"  min="0" max="100" ng-focus ng-model="obj.legalRatio" step="0.01"/>
+                <!--<span class="glyphicon glyphicon-menu-down"></span>-->
+            </td>
+        </tr>
+
+        <tr>
+            <td>7.&nbsp;提取任意盈余公积比例（%）:</td>
+            <td>
+                <input class="randomRatio" type="number" maxlength="3"  min="0" max="100" ng-focus ng-model="obj.randomRatio"/>
+                <!--<span class="glyphicon glyphicon-menu-down"></span>-->
+            </td>
+        </tr>
+    </table>
+    <table class="basicRight">
+        <tr>
+            <td>8.&nbsp;基准收益率（%）:</td>
+            <td>
+                <input class="yieldRate" name="name" ng-focus type="number" min="0" max="100" ng-model="obj.yieldRate" step="0.01"/>
+                <!--<input type="number" onkeyup="javascript:if(this.value>100){$(this).addClass('focused')}else{$(this).removeClass('focused')}" onchange="javascript:if(this.value>100){$(this).addClass('focused')}" ng-model="yieldRate" ng-pattern="/^\d+(\.\d{2})?$/" step="0.01"/>-->
+                <!--<span class="glyphicon glyphicon-menu-down"></span>-->
+            </td>
+        </tr>
+        <tr>
+            <td>9.&nbsp;项目回报机制:</td>
+            <td>
+                <input class="projectReward" type="text" ng-model="obj.projectReward" readonly="readonly"/>
+                <span ng-click="showOrHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                <div>
+                    <option ng-click="selectReward($event,1,'政府付费')">政府付费</option>
+                    <option ng-click="selectReward($event,2,'使用者付费')">使用者付费</option>
+                    <option ng-click="selectReward($event,3,'可行性缺口补助')">可行性缺口补助</option>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>10. 社会资本方资金占比（占资本金比例%）:</td>
+            <td>
+                <input class="surplusRatios" type="number" min="50" max="100" ng-focus ng-model="obj.surplusRatios"/>
+                <!--<span class="glyphicon glyphicon-menu-down"></span>-->
+            </td>
+        </tr>
+        <tr>
+            <td>11.&nbsp;还款方式:</td>
+            <td>
+                <input class="refundMode" type="text" ng-model="obj.refundMode" readonly="readonly"/>
+                <span ng-click="showOrHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                <div>
+                    <option ng-click="selectrefund($event,1,'等额本息')">等额本息</option>
+                    <option ng-click="selectrefund($event,2,'等额还本付息')">等额还本付息</option>
+                    <option ng-click="selectrefund($event,3,'先息后本')">先息后本</option>
+                    <option ng-click="selectrefund($event,4,'一次性偿还')">一次性偿还</option>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>12.&nbsp;固定资产折旧方式:</td>
+            <td>
+                <input class="depreciationType" type="text" ng-model="obj.depreciationType" readonly="readonly"/>
+                <span ng-click="showOrHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                <div>
+                    <option ng-click="selectreFixed($event,1,'直线折旧')">直线折旧</option>
+                    <option ng-click="selectreFixed($event,2,'双倍余额递减法')">双倍余额递减法</option>
+                    <option ng-click="selectreFixed($event,3,'年数总和法')">年数总和法</option>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>13.&nbsp;建设期利率（%）:</td>
+            <td><input class="constructionRate" type="number" min="0" max="99" ng-focus ng-model="obj.constructionRate"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;短期贷款利率（%）:</td>
+            <td><input class="shortLoanRate" type="number" min="0" max="99" ng-focus ng-model="obj.shortLoanRate"></td>
+        </tr>
+        <tr>
+            <td>14.&nbsp;贷款偿还期（年）:</td>
+            <td>
+                <input class="playbackPeriod" maxlength="2"  type="number" ng-focus ng-model="obj.playbackPeriod" min="1" max="{{obj.periodOptrationa}} "/>
+                <span class="prompt" style="color: red;display: none">请先填写运营期</span>
+                <span class="promptTitle" style="color: red;display: none">贷款偿还期不能超过运营期</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>15. 其他融资费用（万元）:</td>
+            <td><input class="otherCost" type="number"  ng-model="obj.otherCost"/></td>
+        </tr>
+    </table>
+</div>

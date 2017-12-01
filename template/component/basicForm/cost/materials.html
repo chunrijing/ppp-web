@@ -1,0 +1,76 @@
+<div class="materials" ng-controller="materialsCtr">
+    <div class="invTitle">
+        <div class="btns">
+            <button class="addLine" ng-click="add()">增加行</button>
+            <button class="deleLine" ng-click="delete()">删除行</button>
+        </div>
+        <div class="addSele">
+            <div>
+                <span>价格体系：</span>
+                <div class="tax selDiv">
+                    <input type="text" value="{{taxType==0?'含税':'不含税'}}" readonly>
+                    <span ng-click="showHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                    <div class="seleName">
+                        <option ng-click="selectTax(0)">含税</option>
+                        <option ng-click="selectTax(1)">不含税</option>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span>单位：</span>
+                <div class="unit selDiv">
+                    <input type="text" value="{{unitType==0?'万元':'元'}}" readonly>
+                    <span ng-click="showHide($event)" class="glyphicon glyphicon-menu-down"></span>
+                    <div class="seleName">
+                        <option ng-click="selectUnit(0)">万元</option>
+                        <option ng-click="selectUnit(1)">元</option>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tableCon">
+        <div class="head tableLeft">
+            <table>
+                <thead>
+                <tr>
+                    <th width="8%">序号</th>
+                    <th width="20%">项目</th>
+                    <th width="12%">数量</th>
+                    <th width="12%">数量单位</th>
+                    <th width="12%">增值税(%)</th>
+                    <th width="12%">含税单价</th>
+                    <th width="12%">不含税单价</th>
+                    <th width="12%">费用(万元)</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="body tableLeft scrollbars">
+            <table>
+                <tbody>
+                <tr class="total">
+                    <td width="8%">1</td>
+                    <td width="20%">合计</td>
+                    <td width="12%">
+                        <span class="line"></span>
+                    </td>
+                    <td width="12%">
+                        <span class="line"></span>
+                    </td>
+                    <td width="12%">
+                        <span class="line"></span>
+                    </td>
+                    <td width="12%">
+                        <span class="line"></span>
+                    </td>
+                    <td width="12%">
+                        <span class="line"></span>
+                    </td>
+                    <td width="12%"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="constructInvest" ng-controller="constructInvestCtrl">
+    <div class="invTitle" style="position: relative;">
+        <div class="btns">
+            <button class="addLine" ng-click="addLine()">增加明细</button>
+            <button class="deleLine" ng-click="deleLine()">删除行</button>
+        </div>
+        <p class="prompt" style="position: absolute;bottom: 2px;left: 10px;font-size: 10px">提示：需要增加工程或费用下面的明细，才能输入相关的费用</p>
+         <div class="addSele">
+            <div class="reserveRate">
+                <span>基本预备费费率</span>
+                <input type="number" min="0" max="99" set-focus data-num="" ng-blur="getValue($event,'预备费费率')">
+            </div>
+            <div class="increaseRate">
+                <span>预备费价格上涨率</span>
+                <input type="number" min="0" max="99" set-focus data-num="" ng-blur="getValue($event,'价格上涨率')">
+            </div>
+        </div>
+    </div>
+    <div class="tableDiv">
+        <div>
+            <table class="investTable investTableHead">
+                <thead>
+                <tr>
+                    <th rowspan="2" width="5%">序号</th>
+                    <th rowspan="2" width="12%">工程或费用名称</th>
+                    <th rowspan="2" width="8%">费用</th>
+                    <th rowspan="2" width="8%">下浮率(%)</th>
+                    <th rowspan="2" width="8%">抵扣税率(%)</th>
+                    <th rowspan="2" width="8%">折旧/摊销年限</th>
+                    <th rowspan="2" width="8%">残值率(%)</th>
+                    <th rowspan="2" width="8%">下浮后投资(万元)</th>
+                    <th rowspan="2" width="8%">抵扣额(万元)</th>
+                    <th colspan="{{count}}">分年投资比例</th>
+                </tr>
+                <tr>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formTable scrollbars">
+            <table class="investTable investTableBody">
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

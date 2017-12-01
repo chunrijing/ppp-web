@@ -1,0 +1,59 @@
+<header ng-include="'template/core/header.html'"></header>
+<div class="basicForm">
+    <p class="route"><i style="cursor: pointer" ng-click="sref()">{{proName}}({{schemeName}})</i>
+        <i class="glyphicon glyphicon-menu-right"></i>
+        <span>基础信息参数表</span>
+    </p>
+    <p class="title"><span>设置参数变量</span><span style="font-size: 15px">（填写完整必填表后即可“生成数据”）</span></p>
+    <div class="slider">
+        <ul>
+            <li ng-repeat="item in navList track by $index" repeat-finish>
+                <div ng-click="seletForm($event,item.tName,item.tId)" isChild="{{item.navTableInfos}}" data-id="{{item.tId}}">
+                    <span style="color: #2196f3;float: right;margin-top: 20px" class="glyphicon glyphicon-menu-up" ng-if="item.navTableInfos!=null"></span>
+                    <canvas class="myCanvas"></canvas>{{item.tName}}
+                </div>
+                <ul style="display: none">
+                    <li isChild="{{items.navTableInfos}}" ng-click="seletForm($event,items.tName,items.tId)" data-name="{{items.tName}}" data-id="{{items.tId}}" ng-repeat="items in item.navTableInfos track by $index">{{items.tName}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="form">
+            <p class="title"><span>{{titleName}}</span></p>
+            <div ng-if="tId==1" ng-include="'template/component/basicForm/basis.html'"></div>
+            <div ng-if="tId==2" ng-include="'template/component/basicForm/constructInvest.html'"></div>
+            <!--总包方-->
+            <div ng-if="tId==3" ng-include="'template/component/basicForm/contractor.html'"></div>
+            <!--负荷率和收入补贴-->
+            <div ng-if="tId==5" ng-include="'template/component/basicForm/business.html'"></div>
+            <!--收入预测-->
+            <div ng-if="tId==6" ng-include="'template/component/basicForm/income.html'"></div>
+            <!--附加税金-->
+            <div ng-if="tId==7" ng-include="'template/component/basicForm/taxes.html'"></div>
+            <!--外购原材料参数表-->
+            <div ng-if="tId==9" ng-include="'template/component/basicForm/cost/materials.html'"></div>
+            <!--外购原材料辅助-->
+            <div ng-if="tId==10" ng-include="'template/component/basicForm/cost/materialsAux.html'"></div>
+            <!--外购燃料与动力参数表-->
+            <div ng-if="tId==11" ng-include="'template/component/basicForm/cost/materialsFuel.html'"></div>
+            <!--工资及福利费参数表-->
+            <div ng-if="tId==12" ng-include="'template/component/basicForm/cost/salary.html'"></div>
+            <!--其它费用参数表-->
+            <div ng-if="tId==13" ng-include="'template/component/basicForm/cost/otherCost.html'"></div>
+            <!--流动资金估算参数表-->
+            <div ng-if="tId==14" ng-include="'template/component/basicForm/flowcash.html'"></div>
+            <!--维持运营投资参数表-->
+            <div ng-if="tId==41" ng-include="'template/component/basicForm/depriciationx.html'"></div>
+        </div>
+        <div ng-if="tId!=1&&tId!=14" class="markText">
+            <span>备注：</span>
+            <textarea ng-keyup="areaAudit($event)" name="" id="" cols="50" rows="3"></textarea>
+        </div>
+        <div class="btns">
+            <button class="save"  ng-click="save()">保存</button>
+            <button class="checkForm" disabled="disabled" ng-click="checkForm()">查看数据</button>
+            <button class="prodForm" disabled="disabled" ng-click="prodForm()">生成数据</button>
+        </div>
+    </div>
+</div>

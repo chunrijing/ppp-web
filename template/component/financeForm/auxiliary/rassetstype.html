@@ -1,0 +1,16 @@
+<div class="rassetstype scrollbars" ng-controller="rmaterialsCtrl">
+    <div class="rmaterialsTable table_fixed" style="width: 100%;padding-right: 10px">
+        <table width="100%">
+            <thead>
+            <tr>
+                <th width="10%" rowspan="2">序号</th>
+                <th width="60%" rowspan="2">项目</th>
+                <th width="30%" rowspan="2">合计</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr index="{{$index}}" ng-repeat="item in list track by $index"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="rinvest scrollbars" ng-controller="rinvestCtrl">
+    <table width="100%">
+        <tr>
+            <th width="5%">序号</th>
+            <th width="20%">工程或费用名称</th>
+            <th width="15%">费用</th>
+            <th width="15%">下浮率(%)</th>
+            <th width="15%">抵扣税率(%)</th>
+            <!--<th width="11%">折旧/推销年限(%)</th>-->
+            <!--<th width="11%">残值率</th>-->
+            <!--<th colspan="{{periodConstruction}}">分年投资比例</th>-->
+            <th width="15%">下浮后投资(万元)</th>
+            <th width="15%">抵扣额(万元)</th>
+        </tr>
+        <tr ng-repeat="item in list track by $index">
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2].toFixed(2)}}</td>
+            <td>{{item[3].toFixed(2)}}</td>
+            <td>{{item[4].toFixed(2)}}</td>
+            <!--<td>{{item[5]}}</td>-->
+            <!--<td>{{item[6]}}</td>-->
+            <td>{{item[7+periodConstruction].toFixed(2)}}</td>
+            <td>{{item[8+periodConstruction].toFixed(2)}}</td>
+        </tr>
+    </table>
+</div>

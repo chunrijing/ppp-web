@@ -1,0 +1,34 @@
+<div>
+    <div class="modal-header" >
+        <h4 class="modal-title" style="float: left;">复制方案</h4>
+        <button type="button" class="close" data-dismiss="modal" title="关闭" ng-click="cancel()">
+            <span aria-hidden="true" style="font-size: 30px">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" id="modal-body" style="padding-bottom: 0">
+        <table>
+            <tr>
+                <th>项目名称:</th>
+                <th style="position: relative">
+                    <input class="proName" type="text" placeholder="请输入项目名称" ng-model="name" readonly ng-click="showOrHide($event)"/>
+                    <!--<span ng-click="showOrHide($event)" class="glyphicon glyphicon-menu-down"></span>-->
+                    <div class="seleName">
+                        <option data-id="{{item.projectId}}" ng-repeat="item in list track by $index" ng-click="select($event,item.projectId,item.name)">{{item.name}}</option>
+                    </div>
+                </th>
+            </tr>
+            <tr class="schemeTr">
+                <th>方案名称:</th>
+                <th>
+                    <input type="text" placeholder="请输入方案名称" ng-model="schemeName" set-focus ng-blur="check($event)"/>
+                    <p ng-show="isPlanName">方案名称重复，请重新输入</p>
+                    <p ng-show="isBlock">方案名称不能为空</p>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer" style="border-top: none;padding-bottom: 15px">
+        <button class="btn btn-primary" ng-click="ok()">确定</button>
+        <button class="btn btn-primary" ng-click="cancel()">取消</button>
+    </div>
+</div>

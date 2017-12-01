@@ -1,0 +1,84 @@
+<header ng-include="'template/core/header.html'"></header>
+<div class="financeForm">
+    <p class="route"><i style="cursor: pointer" ui-sref="project">{{proName}}({{schemeName}})</i>
+        <i class="glyphicon glyphicon-menu-right"></i>
+        <i style="cursor: pointer" ui-sref="paramForm">设置参数变量</i>
+        <i class="glyphicon glyphicon-menu-right"></i>
+        <span>报表</span>
+    </p>
+    <div class="slider">
+        <ul>
+            <li ng-repeat="item in financeNav track by $index" repeat-finish>
+                <div ng-click="seletForm($event,item.tId,item.tName)" isChild="{{item.navTableInfos}}" data-id="{{item.tId}}">
+                    <span>{{item.tName}}</span><span
+                        style="color: #2196f3;" class="glyphicon glyphicon-menu-up" ng-if="item.navTableInfos!=null"></span>
+                </div>
+                <ul>
+                    <li isChild="{{items.navTableInfos}}" ng-click="seletForm($event,items.tId,items.tName)" data-name="{{items.tName}}" data-id="{{items.tId}}" ng-repeat="items in item.navTableInfos track by $index">{{items.tName}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="form">
+            <header class="formTitle">
+                <p class="title"><span>{{titleName}}<span style="display: inline-block;margin-top: -5px" ng-if="tId!=39&&tId!=40">(万元)</span></span></p>
+                <div class="btns">
+                    <button class="exportExcel" ng-click="exportExcel()">导出Excel</button>
+                    <!--<button class="deleLinePDF" ng-click="deleLinePDF()">导出PDF</button>-->
+                </div>
+            </header>
+            <!--建设投资估算表-->
+            <div ng-if="tId==16" ng-include="'template/component/financeForm/auxiliary/rinvest.html'"></div>
+            <!--外购原材料费估算表-->
+            <div ng-if="tId==17" ng-include="'template/component/financeForm/auxiliary/rmaterials.html'"></div>
+            <!--外购燃料估算表-->
+            <div ng-if="tId==18" ng-include="'template/component/financeForm/auxiliary/rmaterialsfuel.html'"></div>
+            <!--工资福利估算表-->
+            <div ng-if="tId==19" ng-include="'template/component/financeForm/auxiliary/rsalary.html'"></div>
+            <!--营业收入附加税金估算表-->
+            <div ng-if="tId==20" ng-include="'template/component/financeForm/auxiliary/rincometax.html'"></div>
+            <!--流动资金估算表-->
+            <div ng-if="tId==21" ng-include="'template/component/financeForm/auxiliary/rflowCash.html'"></div>
+            <!--项目总投资使用计划与资金筹措表-->
+            <div ng-if="tId==22" ng-include="'template/component/financeForm/auxiliary/rplanfinancing.html'"></div>
+            <!--建设期利息估算表-->
+            <div ng-if="tId==23" ng-include="'template/component/financeForm/auxiliary/rinterest.html'"></div>
+            <!--总包方支付计划-->
+            <div ng-if="tId==24" ng-include="'template/component/financeForm/auxiliary/rRlanContractor.html'"></div>
+            <!--资产分类估算表-->
+            <div ng-if="tId==25" ng-include="'template/component/financeForm/auxiliary/rassetstype.html'"></div>
+            <!--借款还本付息计划表-->
+            <div ng-if="tId==26" ng-include="'template/component/financeForm/auxiliary/rborrowRepay.html'"></div>
+            <!--总包方增值税-->
+            <div ng-if="tId==27" ng-include="'template/component/financeForm/auxiliary/avtcontractor.html'"></div>
+            <!--无形资产摊销估算表-->
+            <div ng-if="tId==28" ng-include="'template/component/financeForm/auxiliary/amortize.html'"></div>
+            <!--总成本费用估算表-->
+            <div ng-if="tId==29" ng-include="'template/component/financeForm/auxiliary/rTotalCost.html'"></div>
+            <!--固定资产折旧-->
+            <div ng-if="tId==42" ng-include="'template/component/financeForm/auxiliary/rDepriciationx.html'"></div>
+
+            <!--利润与利润分配表-->
+            <div ng-if="tId==31" ng-include="'template/component/financeForm/finance/rprofits.html'"></div>
+            <!--项目投资现金流量表-->
+            <div ng-if="tId==32" ng-include="'template/component/financeForm/finance/rinvestCashFlow.html'"></div>
+            <!--项目资本金现金流量表-->
+            <div ng-if="tId==33" ng-include="'template/component/financeForm/finance/rcapitalcashflow.html'"></div>
+            <!--财务计划现金流量表-->
+            <div ng-if="tId==34" ng-include="'template/component/financeForm/finance/rfinancialCash.html'"></div>
+            <!--资产负债表-->
+            <div ng-if="tId==35" ng-include="'template/component/financeForm/finance/rBalanceSheet.html'"></div>
+            <!--社会资本方现金流量表-->
+            <div ng-if="tId==36" ng-include="'template/component/financeForm/finance/rPrivateInvestFlow.html'"></div>
+            <!--各年偿债能力指标汇总表-->
+            <div ng-if="tId==37" ng-include="'template/component/financeForm/finance/rDebtGather.html'"></div>
+            <!--财务指标汇总表-->
+            <div ng-if="tId==38" ng-include="'template/component/financeForm/finance/rFinanceGather.html'"></div>
+            <!--敏感性分析-->
+            <div ng-if="tId==39" ng-include="'template/component/financeForm/sensitivity.html'"></div>
+            <!--盈亏平衡点-->
+            <div ng-if="tId==40" ng-include="'template/component/financeForm/balance.html'"></div>
+        </div>
+    </div>
+</div>

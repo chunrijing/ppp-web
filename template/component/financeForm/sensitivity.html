@@ -1,0 +1,30 @@
+<div class="sensitivity scrollbars" ng-controller="sensitivityCtrl">
+    <div class="changeRate">
+        <span>变化率：</span>
+        <input type="number" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+        <button ng-click="ok()">确定</button>
+    </div>
+    <div class="sensCon">
+        <div class="tables">
+            <table class="table_1">
+               <tr>
+                   <th colspan="6">不确定因素对IRR（%税后）的影响</th>
+               </tr>
+                <tr ng-repeat="item in list_1 track by $index" ngrepeat-finish>
+                    <td ng-repeat="items in item track by $index" ngrepeat-finish>{{items}}</td>
+                </tr>
+            </table>
+            <table class="table_2">
+                <tr>
+                    <th colspan="6">敏感度系数</th>
+                </tr>
+                <tr ng-repeat="item in list_2 track by $index" ngrepeat-finish>
+                    <td ng-repeat="items in item track by $index" ngrepeat-finish>{{items}}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="rateEchart">
+
+        </div>
+    </div>
+</div>
